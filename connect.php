@@ -1,1 +1,4 @@
-  <?php  $conn = mysqli_connect("localhost", "root", "", "check"); ?>
+  <?php  
+  session_start();
+  $conn = mysqli_connect("localhost", "root", "", "checkinfo"); 
+  ?>

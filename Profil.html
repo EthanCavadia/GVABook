@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
-<meta charset="utf-8" />
-<?php
-    include ("connect");
-?>
+<meta charset="utf-8" >
+
+<php include ("connect"); >
 
 <html>
 <head>
@@ -13,7 +12,7 @@
     <article>
         <button class="menuStyle" type="button" onclick="window.location.href='main.html';">Acceuil</button>
         <button class="menuStyle" type="button" onclick="window.location.href='Catalogue.html';">Catalogue</button>
-        <button class="menuStyle" type="button" onclick="window.location.href='Profil.html';">Profil</button>
+        <button class="menuStyle" type="button" onclick="window.location.href='Profil.php';">Profil</button>
     </article>
     <div class="SUForm">
         <form method="post" action="index.php" name="SUForm">
@@ -41,16 +40,18 @@
                 </label>
 
                 <div class="clearfix" name="clearfix">
-                    <button type="submit" class="signupbtn" name="signup" formaction="index.php">Sign Up</button>
+                    <button type="submit" class="signupbtn" name="signup">Sign Up</button>
                     <button type="button" class="cancelbtn" name="cancelbtn">Cancel</button>
                 </div>
 
-                <php if(isset($_POST['submit'])) {
-                     $query=mysqli_query($conn,"INSERT INTO REGISTER SET firstname='".$_POST["firstName"]. "'
-                     ,lastname='". $_POST["lastName"] . "'
-                     ,email='". $_POST["email"] . "'
-                     ,password='". $_POST["password"] . "' );>
-
+                <php
+                    if(isset($_POST['submit'])) {
+                    $query = mysqli_query($conn,"INSERT INTO REGISTER SET firstname='".$_POST["firstname"] . "'
+                    ,lastname='". $_POST["lastname"] . "'
+                    ,username='". $_POST["username"] . "'
+                    ,password='". $_POST["password"] . "' );
+                    }
+                >
             </div>
         </form>
     </div>

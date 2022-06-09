@@ -1,9 +1,9 @@
-CREATE DATABASE userInfo
+CREATE DATABASE checkinfo
 
 CREATE TABLE register (
-	firstName varchar(255) NOT NULL,
-	lastName varchar(255) NOT NULL,
+    id int(10) PRIMARY KEY,
+	firstname varchar(255) NOT NULL,
+	lastname varchar(255) NOT NULL,
 	username varchar(255) NOT NULL,
-	password varchar(50) NOT NULL,
-	loggedin BIT
+	password varchar(50) NOT NULL
 );
