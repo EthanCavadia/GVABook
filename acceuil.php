@@ -14,12 +14,13 @@
     <article>
         <button class="menuStyle" type="button" onclick="window.location.href='main.html';">Acceuil</button>
         <button class="menuStyle" type="button" onclick="window.location.href='Catalogue.html';">Catalogue</button>
-        <button class="menuStyle" type="button" onclick="window.location.href='Profil.html';">Profil</button>
+        <button class="menuStyle" type="button" onclick="window.location.href='index.php';">Profil</button>
     </article>
     
 </body>
 
-<p> Bienvenue sur le site de GVABook.
-    Sur ce site vous pouvez reserver des livres de notre bibliotheque en vous <a href="Profil.html">creant un compte</a> au prealable.
+    <p> 
+        Bienvenue sur le site de GVABook.
+
     </p>
 </html>

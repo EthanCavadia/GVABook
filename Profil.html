@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
+<meta charset="utf-8" />
+<?php
+    include ("connect");
+?>
 
 <html>
-    <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="style/style.css"/>
-    </head>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
 <body>
     <header>GVABook</header>
     <article>
@@ -13,14 +16,19 @@
         <button class="menuStyle" type="button" onclick="window.location.href='Profil.html';">Profil</button>
     </article>
     <div class="SUForm">
-        <form action="action_page.php" style="border:1px solid #ccc">
+        <form method="post" action="index.php" name="SUForm">
             <div class="container">
                 <h1>Créé un compte</h1>
-                <p>Rempliser ces information pour vouss créé un compte.</p>
+                <p>Rempliser ces information pour vous créé un compte.</p>
                 <hr>
+                <label for="nom"><b>Nom</b></label>
+                <input type="text" placeholder="Enter name" name="nom" required>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" name="email" required>
+                <label for="prenom"><b>Prenom</b></label>
+                <input type="text" placeholder="Enter surname" name="prenom" required>
+
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="username" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
@@ -32,10 +40,17 @@
                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                 </label>
 
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                <div class="clearfix" name="clearfix">
+                    <button type="submit" class="signupbtn" name="signup" formaction="index.php">Sign Up</button>
+                    <button type="button" class="cancelbtn" name="cancelbtn">Cancel</button>
                 </div>
+
+                <php if(isset($_POST['submit'])) {
+                     $query=mysqli_query($conn,"INSERT INTO REGISTER SET firstname='".$_POST["firstName"]. "'
+                     ,lastname='". $_POST["lastName"] . "'
+                     ,email='". $_POST["email"] . "'
+                     ,password='". $_POST["password"] . "' );>
+
             </div>
         </form>
     </div>
